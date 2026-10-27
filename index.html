@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075c43">
+  <title>RodTrack | Smart Staff Attendance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">◉</div>
+    <div><strong>RodTrack</strong><small>SMART STAFF ATTENDANCE</small></div>
+    <button class="menu" aria-label="Menu" onclick="toggleMenu()">☰</button>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">CENTRAL ATTENDANCE SYSTEM</p>
+      <h1>Good day 👋</h1>
+      <p>Verify your identity and workplace location before recording attendance.</p>
+      <div class="status-row"><span class="dot"></span><span id="location-status">Workplace location not checked</span></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">STAFF PORTAL</p><h2>Record attendance</h2></div><span class="pill">Preview</span></div>
+      <label for="staff">Select your name</label>
+      <select id="staff">
+        <option value="">Choose staff member</option>
+        <option>Staff 001</option><option>Staff 002</option><option>Staff 003</option><option>Staff 004</option>
+      </select>
+      <div class="two-buttons">
+        <button class="primary" onclick="record('Clock In')">↪ Clock In</button>
+        <button class="secondary" onclick="record('Clock Out')">↗ Clock Out</button>
+      </div>
+      <button class="outline full" onclick="checkLocation()">⌖ Check my location</button>
+      <p class="note">Demo only: this page does not yet verify faces, enforce a secure geofence, or save records to a central database.</p>
+      <div id="message" class="message" role="status"></div>
+    </section>
+
+    <section class="quick-grid">
+      <article class="mini-card"><span class="icon">◉</span><h3>Face verification</h3><p>Connect a tested face-verification service during implementation.</p></article>
+      <article class="mini-card"><span class="icon">⌖</span><h3>Workplace GPS</h3><p>Attendance should only be accepted within the approved workplace boundary.</p></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">TODAY</p><h2>Recent activity</h2></div><span class="pill green">Local demo</span></div>
+      <div id="activity"><p class="empty">No demo attendance recorded yet.</p></div>
+    </section>
+
+    <section class="panel admin">
+      <p class="eyebrow">RESTRICTED AREA</p><h2>Admin dashboard</h2>
+      <p>Manage staff, workplace coordinates, attendance reports, and settings here after secure authentication is connected.</p>
+      <button class="secondary full" onclick="showAdminNotice()">Admin setup</button>
+      <p class="note">Admin login and database access are not implemented in this visual starter. Do not use this demo for real attendance records.</p>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> RodTrack · Smart Staff Attendance</footer>
+  <script src="app.js"></script>
+</body>
+</html>
